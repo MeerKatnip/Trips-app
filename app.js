@@ -7,7 +7,13 @@ app.engine('mustache', mustacheExpress())
 app.set('views', './views')
 app.set('view engine', 'mustache')
 
-let listOfTrips = []
+global.listOfTrips = []
+
+
+// localhost:3000/css/version-1/style.css
+app.use('/css/version-1',express.static('css'))
+// localhost:3000/js/client.js
+app.use(express.static(__dirname + '../public'))
 
 
 
@@ -33,7 +39,10 @@ app.post('/add-trip',(req,res) => {
     let trip = { city: city, cityImgURL: cityImgURL, departDate: departDate, returnDate: returnDate }
     listOfTrips.push(trip)
     console.log(listOfTrips)
-    res.redirect("/add-trips")
+    
+    res.redirect("/add-trip")
+
+    // res.render("add-trip", {city: city})
 })
 
 app.get('/delete-trip',(req,res) => {
