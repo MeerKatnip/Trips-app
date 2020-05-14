@@ -7,7 +7,7 @@ app.engine('mustache', mustacheExpress())
 app.set('views', './views')
 app.set('view engine', 'mustache')
 
-
+let listOfTrips = []
 
 
 
@@ -22,7 +22,18 @@ app.get('/all-trips',(req,res) => {
 
 app.get('/add-trip',(req,res) => {
     res.render('add-trip')
-    console.log('adding a trip')
+})
+
+app.post('/add-trip',(req,res) => {
+    let city = req.body.city
+    let cityImgURL = req.body.cityImgURL
+    let departDate = req.body.departDate
+    let returnDate = req.body.returnDate
+
+    let trip = { city: city, cityImgURL: cityImgURL, departDate: departDate, returnDate: returnDate }
+    listOfTrips.push(trip)
+    console.log(listOfTrips)
+    res.redirect("/add-trips")
 })
 
 app.get('/delete-trip',(req,res) => {

@@ -6,18 +6,21 @@
 <body>
     <h1>Add a Trip</h1>
     <form method="POST" action="/add-trip">
-        <div><h4>Where would you like to travel?</h4>
+        <div><label for="city">Where would you like to travel?</label>
         <input type="text" placeHolder="Destination city" name="city" />
         </div>
-        <div><h4>Add a fun picture of your destination:</h4>
+        <div><label for="cityImgURL">Add a fun picture of your destination:</label>
         <input type="text" placeHolder="URL for image" name="cityImgURL" />
         </div>
-        <div><h4>Date of departure:</h4>
+        <div>
+        <label for="departDate">Date of departure:</label>
         <input type="date" placeHolder="Date of departure" name="departDate" value="yyyy-mm-dd" min="2020-01-01" max="2022-12-31" />
         </div>
-        <div><h4>Date of return:</h4>
+        <div>
+        <label for="returnDate">Date of return:</label>
         <input type="date" placeHolder="Date of return" name="returnDate" value="yyyy-mm-dd" min="2020-01-01" max="2022-12-31" />
         </div>
+        <button>Add trip</button>
     </form>
 </body>
 
