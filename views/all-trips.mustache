@@ -1,4 +1,4 @@
-<html>
+{{! <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -11,8 +11,15 @@
 <a href="/all-trips">View All Trips</a>
 </div>
     <h1>View All Trips</h1>
+    <div>
+    {{#tripsKey}}
+    <p>{{city}}, {{cityImgURL}}, {{departDate}}, {{returnDate}}</p>
+    {{/tripsKey}}
+    </div>
+    
+    
     {{! <form method="POST">
     {{! </form>                 may not need post if page is only view all? }}
 </body>
 
-</html>
+</html> }}
