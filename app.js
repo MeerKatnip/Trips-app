@@ -35,8 +35,7 @@ app.post('/all-trips',(req,res) => {
     listOfTrips.push(trip)
 
     console.log(listOfTrips)
-    
-    res.redirect("/all-trips")
+    res.redirect('/all-trips')
 
 })
 
