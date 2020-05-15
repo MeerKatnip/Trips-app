@@ -8,10 +8,24 @@
 <a href="/">Home</a>
 <a href="/add-trip">Add a Trip/View All Trips</a>
 <a href="/delete-trip">Delete a Trip</a>
-</div>
-    <h1>Delete a Trip</h1>
-    <form method="POST" action="/delete-trip">
-    </form>
+
+    <h1>Delete Trip</h1>
+    <ul>
+    {{#listOfTrips}}
+        
+        <li>
+        <label>{{city}} Trip</label>
+            <form method="POST" action="/delete-trip">
+                <input type="hidden" value={{city}} name="city" />
+                <input type="hidden" value={{cityImgURL}} name="cityImgURL" />
+                <input type="hidden" value={{departDate}} name="departDate" />
+                <input type="hidden" value={{returnDate}} name="returnDate" />
+                <button>Delete</button>
+            </form>
+        </li>
+
+    {{/listOfTrips}}
+    </ul>
 </body>
 
 </html>

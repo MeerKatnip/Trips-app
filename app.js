@@ -61,10 +61,18 @@ app.post('/add-trip',(req,res) => {
 
 app.get('/delete-trip',(req,res) => {
     res.render('delete-trip')
-    console.log('deleting a trip')
+    
 })
 
+app.post('/delete-trip',(req,res) => {
+    let city = req.body.city
+    let cityImgURL = req.body.cityImgURL
+    let departDate = req.body.departDate
+    let returnDate = req.body.returnDate
 
+    listOfTrips = listOfTrips.filter(trip => trip.city != city)
+    res.redirect('/delete-trip')
+})
 
 
 app.listen(3001,() => {
