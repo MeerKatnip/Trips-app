@@ -6,12 +6,13 @@
 <body>
 <div>
 <a href="/">Home</a>
-<a href="/add-trip">Add a Trip/View All Trips</a>
+<a href="/add-trip">Add a Trip</a>
 <a href="/delete-trip">Delete a Trip</a>
+<a href="/all-trips">View All Trips</a>
 
     <h1>Delete Trip</h1>
     <ul>
-    {{#listOfTrips}}
+    {{#tripsKey}}
         
         <li>
         <label>{{city}} Trip</label>
@@ -24,8 +25,10 @@
             </form>
         </li>
 
-    {{/listOfTrips}}
+    {{/tripsKey}}
     </ul>
+
+    
 </body>
 
 </html>

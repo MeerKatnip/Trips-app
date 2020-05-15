@@ -6,8 +6,9 @@
 <body>
 <div>
 <a href="/">Home</a>
-<a href="/add-trip">Add a Trip/View All Trips</a>
+<a href="/add-trip">Add a Trip</a>
 <a href="/delete-trip">Delete a Trip</a>
+<a href="/all-trips">View All Trips</a>
 </div>
     <h1>Add a Trip</h1>
     <form method="POST" action="/add-trip">
@@ -28,7 +29,13 @@
         <button>Add trip</button>
     </form>
 
-<h1>View All Trips</h1>
+    <div>
+    {{#tripsKey}}
+    Your {{city}} trip has been created!
+    {{/tripsKey}}
+    </div>
+
+<h1>View All Active Trips</h1>
     <div>
     {{#tripsKey}}
     <p>{{city}}, {{cityImgURL}}, {{departDate}}, {{returnDate}}</p>

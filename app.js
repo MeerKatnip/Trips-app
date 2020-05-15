@@ -21,24 +21,24 @@ app.get('/',(req,res) => {
     res.render('index')
 })
 
-// app.get('/all-trips',(req,res) => {
-//     res.render('all-trips')
-// })
+app.get('/all-trips',(req,res) => {
+    res.render('all-trips')
+})
 
-// app.post('/all-trips',(req,res) => {
-//     let city = req.body.city
-//     let cityImgURL = req.body.cityImgURL
-//     let departDate = req.body.departDate
-//     let returnDate = req.body.returnDate
+app.post('/all-trips',(req,res) => {
+    let city = req.body.city
+    let cityImgURL = req.body.cityImgURL
+    let departDate = req.body.departDate
+    let returnDate = req.body.returnDate
 
-//     let trip = { city: city, cityImgURL: cityImgURL, departDate: departDate, returnDate: returnDate }
-//     listOfTrips.push(trip)
+    let trip = { city: city, cityImgURL: cityImgURL, departDate: departDate, returnDate: returnDate }
+    listOfTrips.push(trip)
 
-//     console.log(listOfTrips)
+    console.log(listOfTrips)
     
-//     res.redirect("/all-trips")
+    res.redirect("/all-trips")
 
-// })
+})
 
 app.get('/add-trip',(req,res) => {
     res.render('add-trip',{tripsKey: listOfTrips})
@@ -60,7 +60,7 @@ app.post('/add-trip',(req,res) => {
 })
 
 app.get('/delete-trip',(req,res) => {
-    res.render('delete-trip')
+    res.render('delete-trip',{tripsKey: listOfTrips})
     
 })
 
